@@ -1,0 +1,13 @@
+<# You can write text without the powershell window running it as a script by commenting it out. The way that you can do this is
+
+In PowerShell single line comments start with a hash symbol, everything to the right of the # will be ignored.
+
+# comment
+
+In PowerShell 2.0 and above multi-line block comments can be used:
+
+<# comment #> 
+
+Source:
+https://ss64.com/ps/syntax-comments.html
+#>
