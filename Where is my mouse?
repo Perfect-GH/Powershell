@@ -14,5 +14,8 @@ $X = [System.Windows.Forms.Cursor]::Position.X
 $Y = [System.Windows.Forms.Cursor]::Position.Y
 Write-Output "X: $X | Y: $Y"
 }
+
+Source:
+This was obtained from https://community.spiceworks.com/topic/1627218-powershell-get-pixel-under-mouse-cursor. The answer was provided by Michael.SC on May 23 2016.
 #>
  
