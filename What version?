@@ -1,0 +1,10 @@
+You can find what version of powershell you are using by typing:
+  $PSVersionTable.PSVersion
+
+If the variable does not exist, it is safe to assume the engine is version 1.0.
+
+An alternate method is 
+  Get-Host
+  
+Source:
+https://stackoverflow.com/questions/1825585/determine-installed-powershell-version?rq=1
