@@ -1,0 +1,11 @@
+ # This will move cursor 10 pixels to the right.
+
+while($true)
+{
+  $Pos = [System.Windows.Forms.Cursor]::Position
+  [System.Windows.Forms.Cursor]::Position = New-Object System.Drawing.Point((($Pos.X) + 10) , $Pos.Y)
+  Sleep 1
+}
+
+
+ 
