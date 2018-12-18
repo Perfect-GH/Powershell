@@ -1,0 +1,34 @@
+#########################################################################################
+# SCRIPT NAME:
+#	RemotePatching.ps1
+#
+# DATE CREATED:
+#	In progress
+#
+# CREATED BY:
+#	Perfect-GH, GitHub
+#
+# DESCRIPTION:  
+#	The script has been created to install patches and resolve issues with existing software.
+#		- Enable PowerShell Remoting
+#		- Enable Unrestricted execution policy
+#
+# VERSION:  5.1.16299.785
+#
+# DATE MODIFIED:  N/A
+#
+# MODIFIED BY:    N/A
+#
+# MODIFICATIONS:  N/A
+#
+# Notes:
+#   - Powershell needs to be run as an administrator.
+#########################################################################################
+
+#########################################################################################
+# Enables PowerShell Remoting
+# Enables Unrestricted execution policy
+#########################################################################################
+
+Enable-psRemoting -Force
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
