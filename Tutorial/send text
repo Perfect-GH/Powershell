@@ -1,0 +1,11 @@
+$wshell = New-Object -ComObject wscript.shell;
+
+$wshell.AppActivate('Untitled - Notepad')
+
+Sleep 2
+
+$wshell.SendKeys('hello')
+$wshell.SendKeys('~')
+$wshell.SendKeys('123456')
+$wshell.SendKeys('~')
+$wshell.SendKeys('YeSsIr')
