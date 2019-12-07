@@ -1,0 +1,25 @@
+# https://social.technet.microsoft.com/Forums/en-US/2e7db624-2260-4a65-a57b-f6f2e22312f0/sha1-hash-of-an-entire-folder-structure?forum=winserversecurity
+# https://social.technet.microsoft.com/profile/tyler%20boone/?ws=usercard-mini
+# Friday, January 2, 2015 8:05 PM
+
+Function Get-FolderHash
+{
+    param ($folder)
+    
+    Write-Output "Calculating hash of $folder"
+    $files = dir $folder -Recurse |? { -not $_.psiscontainer }
+    
+    $allBytes = new-object System.Collections.Generic.List[byte]
+    foreach ($file in $files)
+    {
+        $allBytes.AddRange([System.IO.File]::ReadAllBytes($file.FullName))
+        $allBytes.AddRange([System.Text.Encoding]::UTF8.GetBytes($file.Name))
+    }
+    $hasher = [System.Security.Cryptography.MD5]::Create()
+    $ret = [string]::Join("",$($hasher.ComputeHash($allBytes.ToArray()) | %{"{0:x2}" -f $_}))
+    Write-Output "hash of $folder is $ret."
+    return $ret
+}
+
+Get-FolderHash "c:\<folder>"
+
