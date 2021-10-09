@@ -1,0 +1,17 @@
+$P_Drive = "\\C:\TEMP\$env:USERNAME"
+
+  # Check if "P" drive exists, else create it.
+  If (Test-Path $P_Drive.Equals($True)){
+    Write-Host -ForegroundColor GREEN "Your `"P`" drive exists."
+  }
+  Else{
+    Write-Host -ForegroundColor YELLOW "Your `"P`" drive does not exist - creating now."
+    New-Item -ItemType "Directory" -Path $P_Drive -Force
+      # Check if the "P" drive was created successfully, else warn that you need to manually create it.
+      If (Test-Path $P_Drive.Equals($True)){
+      Write-Host -ForegroundColor GREEN "Your `"P`" has been created."
+      }
+      Else{
+      Write-Host -ForegroundColor Red "An error has occured when creating the `"P`" drive."
+      }
+    }
